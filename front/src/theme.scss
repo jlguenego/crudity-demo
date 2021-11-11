@@ -1,0 +1,13 @@
+$theme: "light";
+
+$bg-color: white;
+$fg-color: black;
+$primary-bg-color: hsl(240, 100%, 95%);
+$primary-fg-color: black;
+
+@if $theme == dark {
+  $bg-color: black;
+  $fg-color: white;
+  $primary-bg-color: hsl(240, 100%, 20%);
+  $primary-fg-color: white;
+}

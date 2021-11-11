@@ -1,0 +1,17 @@
+@import "src/theme";
+
+:host {
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary-bg-color;
+  color: $primary-fg-color;
+  a {
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

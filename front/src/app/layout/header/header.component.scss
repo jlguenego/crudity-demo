@@ -1,0 +1,28 @@
+@import "src/theme.scss";
+
+:host {
+  background-color: $primary-bg-color;
+  color: $primary-fg-color;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5em;
+  a {
+    text-decoration: inherit;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+
+    &:hover {
+      text-decoration: underline;
+    }
+    svg {
+      height: 2.5em;
+      fill: $primary-fg-color;
+    }
+    span {
+      font-size: 1.4em;
+    }
+  }
+}
