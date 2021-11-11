@@ -1,4 +1,4 @@
-@import "src/theme.scss";
+@import "src/variables.scss";
 
 :host {
   background-color: $primary-bg-color;
@@ -25,5 +25,9 @@
     span {
       font-size: 1.4em;
     }
+  }
+
+  button {
+    font-size: 0.7em;
   }
 }

@@ -2,6 +2,7 @@
 @import "../node_modules/normalize.css/normalize.css";
 
 @import "./theme.scss";
+@import "./variables.scss";
 
 *,
 *::before,
@@ -20,6 +21,7 @@ main {
   flex-flow: column;
   align-items: center;
   gap: 0.5em;
+  padding: 0.5em;
 }
 
 button {

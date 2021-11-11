@@ -1,0 +1,30 @@
+nav {
+  display: flex;
+  gap: 0.3em;
+  flex-wrap: wrap;
+}
+
+table tbody {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+
+  tr {
+    cursor: pointer;
+    border: 0.1em solid #bbb;
+    display: flex;
+    flex-flow: column;
+
+    td {
+      padding: 0.5em 1em;
+
+      &.name {
+        font-weight: bold;
+      }
+    }
+
+    &:hover {
+      background-color: var(--btn-hover-bg-color);
+    }
+  }
+}
