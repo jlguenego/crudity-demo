@@ -4,6 +4,16 @@
   --primary-bg-color: hsl(240, 100%, 95%);
   --primary-fg-color: black;
   --alternate-bg-color: hsl(240, 0%, 95%);
+
+  --btn-bg-color: #eee;
+  --btn-hover-bg-color: #ddd;
+  --btn-active-bg-color: #ccc;
+  --btn-fg-color: black;
+  --btn-primary-bg-color: hsl(240, 100%, 70%);
+  --btn-primary-hover-bg-color: hsl(240, 100%, 80%);
+  --btn-primary-active-bg-color: hsl(240, 100%, 85%);
+  --btn-primary-fg-color: white;
+  --btn-disabled-fg-color: gray;
 }
 
 body.dark {
@@ -12,6 +22,16 @@ body.dark {
   --primary-bg-color: hsl(240, 100%, 20%);
   --primary-fg-color: white;
   --alternate-bg-color: hsl(240, 0%, 20%);
+
+  --btn-bg-color: #333;
+  --btn-hover-bg-color: #555;
+  --btn-active-bg-color: #777;
+  --btn-fg-color: white;
+  --btn-primary-bg-color: hsl(240, 100%, 40%);
+  --btn-primary-hover-bg-color: hsl(240, 100%, 50%);
+  --btn-primary-active-bg-color: hsl(240, 100%, 60%);
+  --btn-primary-fg-color: white;
+  --btn-disabled-fg-color: gray;
 }
 
 $bg-color: var(--bg-color);
@@ -19,3 +39,13 @@ $fg-color: var(--fg-color);
 $primary-bg-color: var(--primary-bg-color);
 $primary-fg-color: var(--primary-fg-color);
 $alternate-bg-color: var(--alternate-bg-color);
+
+$btn-bg-color: var(--btn-bg-color);
+$btn-hover-bg-color: var(--btn-hover-bg-color);
+$btn-active-bg-color: var(--btn-active-bg-color);
+$btn-fg-color: var(--btn-fg-color);
+$btn-primary-bg-color: var(--btn-primary-bg-color);
+$btn-primary-hover-bg-color: var(--btn-primary-hover-bg-color);
+$btn-primary-active-bg-color: var(--btn-primary-active-bg-color);
+$btn-primary-fg-color: var(--btn-primary-fg-color);
+$btn-disabled-fg-color: var(--btn-disabled-fg-color);

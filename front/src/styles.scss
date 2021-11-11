@@ -3,8 +3,55 @@
 
 @import "./theme.scss";
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: sans-serif;
   color: $fg-color;
   background-color: $bg-color;
+}
+
+main {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 0.5em;
+}
+
+button {
+  border-radius: 0.3em;
+  padding: 0.5em 1em;
+  border: 0.1em solid $btn-bg-color;
+  background-color: $btn-bg-color;
+  color: $btn-disabled-fg-color;
+  &:not(:disabled) {
+    cursor: pointer;
+    color: $btn-fg-color;
+    &:hover {
+      border-color: $btn-hover-bg-color;
+      background-color: $btn-hover-bg-color;
+    }
+    &:active {
+      border-color: $btn-active-bg-color;
+      background-color: $btn-active-bg-color;
+    }
+
+    &.primary {
+      color: $btn-primary-fg-color;
+      border-color: $btn-primary-bg-color;
+      background-color: $btn-primary-bg-color;
+      &:hover {
+        border-color: $btn-primary-hover-bg-color;
+        background-color: $btn-primary-hover-bg-color;
+      }
+      &:active {
+        border-color: $btn-primary-active-bg-color;
+        background-color: $btn-primary-active-bg-color;
+      }
+    }
+  }
 }
