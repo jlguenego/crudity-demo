@@ -1,13 +1,20 @@
 $theme: "light";
 
-$bg-color: white;
-$fg-color: black;
-$primary-bg-color: hsl(240, 100%, 95%);
-$primary-fg-color: black;
-
-@if $theme == dark {
-  $bg-color: black;
-  $fg-color: white;
-  $primary-bg-color: hsl(240, 100%, 20%);
-  $primary-fg-color: white;
+:root {
+  --bg-color: white;
+  --fg-color: black;
+  --primary-bg-color: hsl(240, 100%, 95%);
+  --primary-fg-color: black;
 }
+
+body.dark {
+  --bg-color: black;
+  --fg-color: white;
+  --primary-bg-color: hsl(240, 100%, 20%);
+  --primary-fg-color: white;
+}
+
+$bg-color: var(--bg-color);
+$fg-color: var(--fg-color);
+$primary-bg-color: var(--primary-bg-color);
+$primary-fg-color: var(--primary-fg-color);
