@@ -3,6 +3,7 @@
   --fg-color: black;
   --primary-bg-color: hsl(240, 100%, 95%);
   --primary-fg-color: black;
+  --alternate-bg-color: hsl(240, 0%, 95%);
 }
 
 body.dark {
@@ -10,9 +11,11 @@ body.dark {
   --fg-color: white;
   --primary-bg-color: hsl(240, 100%, 20%);
   --primary-fg-color: white;
+  --alternate-bg-color: hsl(240, 0%, 20%);
 }
 
 $bg-color: var(--bg-color);
 $fg-color: var(--fg-color);
 $primary-bg-color: var(--primary-bg-color);
 $primary-fg-color: var(--primary-fg-color);
+$alternate-bg-color: var(--alternate-bg-color);
