@@ -13,6 +13,7 @@ export class ThemeService {
       document.body.classList.remove('dark');
       document.body.classList.remove('light');
       document.body.classList.add(theme);
+      localStorage.setItem('theme', theme);
     });
   }
 
@@ -25,12 +26,7 @@ export class ThemeService {
   }
 
   syncWithUserPreferences() {
-    if (
-      window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches
-    ) {
-      this.theme$.next('dark');
-    }
+    this.initUserPreferences();
 
     // also watch for user pref changes.
     window
@@ -39,5 +35,19 @@ export class ThemeService {
         const theme = e.matches ? 'dark' : 'light';
         this.theme$.next(theme);
       });
+  }
+
+  initUserPreferences() {
+    const str = localStorage.getItem('theme');
+    if (!str) {
+      if (
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      ) {
+        this.theme$.next('dark');
+      }
+      return;
+    }
+    this.theme$.next(str);
   }
 }
