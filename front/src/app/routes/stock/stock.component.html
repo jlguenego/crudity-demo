@@ -4,14 +4,11 @@
     <button arial-label="Raffraichir">
       <fa-icon [icon]="faSync"></fa-icon>
     </button>
-    <button arial-label="Ajouter">
-      <fa-icon [icon]="faPlus" routerLink="add"></fa-icon>
+    <button arial-label="Ajouter" routerLink="add">
+      <fa-icon [icon]="faPlus"></fa-icon>
     </button>
-    <button arial-label="Supprimer">
+    <button arial-label="Supprimer" [hidden]="selectedArticles.size === 0">
       <fa-icon [icon]="faTrashAlt"></fa-icon>
-    </button>
-    <button arial-label="Editer" [hidden]="selectedArticles.size !== 1">
-      <fa-icon [icon]="faPen"></fa-icon>
     </button>
   </nav>
 
@@ -27,6 +24,11 @@
         </td>
         <td class="price">{{ a.price }} €</td>
         <td class="qty">{{ a.qty }} en stock</td>
+        <td class="action">
+          <button arial-label="Editer" routerLink="edit">
+            <fa-icon [icon]="faPen"></fa-icon>
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>
