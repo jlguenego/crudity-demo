@@ -15,17 +15,24 @@ table tbody {
     border-radius: var(--border-radius);
     display: flex;
     flex-flow: column;
+    position: relative;
+
+    &:hover {
+      background-color: var(--btn-hover-bg-color);
+    }
+
+    &.selected {
+      background-color: var(--btn-active-bg-color);
+    }
 
     td {
       padding: var(--padding);
 
       &.name {
+        display: flex;
+        justify-content: space-between;
         font-weight: bold;
       }
-    }
-
-    &:hover {
-      background-color: var(--btn-hover-bg-color);
     }
   }
 }

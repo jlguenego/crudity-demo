@@ -1,16 +1,30 @@
 <main>
   <h1>Liste des articles</h1>
   <nav>
-    <button>Raffraichir</button>
-    <button>Ajouter</button>
-    <button>Supprimer</button>
-    <button>Editer</button>
+    <button arial-label="Raffraichir">
+      <fa-icon [icon]="faSync"></fa-icon>
+    </button>
+    <button arial-label="Ajouter">
+      <fa-icon [icon]="faPlus" routerLink="add"></fa-icon>
+    </button>
+    <button arial-label="Supprimer">
+      <fa-icon [icon]="faTrashAlt"></fa-icon>
+    </button>
+    <button arial-label="Editer" [hidden]="selectedArticles.size !== 1">
+      <fa-icon [icon]="faPen"></fa-icon>
+    </button>
   </nav>
 
   <table>
     <tbody>
-      <tr *ngFor="let a of articleService.articles$ | async">
-        <td class="name">{{ a.name }}</td>
+      <tr
+        [class.selected]="selectedArticles.has(a)"
+        (click)="toggle(a)"
+        *ngFor="let a of articleService.articles$ | async"
+      >
+        <td class="name">
+          {{ a.name }}
+        </td>
         <td class="price">{{ a.price }} €</td>
         <td class="qty">{{ a.qty }} en stock</td>
       </tr>
