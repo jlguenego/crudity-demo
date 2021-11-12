@@ -15,15 +15,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root',
 })
 export class ArticleService {
-  remove(selectedArticles: Set<Article>) {
-    const ids = [...selectedArticles].map((a) => a.id);
-    return this.http.delete('/api/articles', {
-      body: JSON.stringify(ids),
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-      }),
-    });
-  }
   articles$ = new BehaviorSubject<Article[] | undefined>([]);
 
   constructor(private http: HttpClient) {
@@ -51,5 +42,15 @@ export class ArticleService {
         this.articles$.next(articles);
       })
     );
+  }
+
+  remove(selectedArticles: Set<Article>) {
+    const ids = [...selectedArticles].map((a) => a.id);
+    return this.http.delete('/api/articles', {
+      body: JSON.stringify(ids),
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    });
   }
 }
