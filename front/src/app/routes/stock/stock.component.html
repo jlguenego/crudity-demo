@@ -12,7 +12,17 @@
     </button>
   </nav>
 
-  <ng-template #loading>Loading...</ng-template>
+  <ng-template #loading>
+    <table>
+      <tbody>
+        <tr *ngFor="let a of [1, 2, 3, 4]">
+          <td class="name skeleton">loading...</td>
+          <td class="price skeleton">loading...</td>
+          <td class="qty skeleton">loading...</td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-template>
   <table *ngIf="articleService.articles$ | async; else loading">
     <tbody>
       <tr

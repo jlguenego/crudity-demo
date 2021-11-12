@@ -89,3 +89,37 @@ form {
     margin-top: 3em;
   }
 }
+
+.skeleton {
+  background-clip: content-box;
+  animation: loading 2s ease-in-out 0s infinite;
+}
+
+@keyframes loading {
+  from {
+    background-color: #ccc;
+    color: #ccc;
+  }
+
+  50% {
+    background-color: #ddd;
+    color: #ddd;
+  }
+
+  to {
+    background-color: #ccc;
+    color: #ccc;
+  }
+}
+
+.skeleton {
+  &.name {
+    width: 50%;
+  }
+  &.price {
+    width: 30%;
+  }
+  &.qty {
+    width: 70%;
+  }
+}
