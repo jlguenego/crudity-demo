@@ -9,25 +9,10 @@
 
   <table>
     <tbody>
-      <tr>
-        <td class="name">Tournevis</td>
-        <td class="price">1.40 €</td>
-        <td class="qty">340 en stock</td>
-      </tr>
-      <tr>
-        <td class="name">Tournevis</td>
-        <td class="price">1.40 €</td>
-        <td class="qty">340 en stock</td>
-      </tr>
-      <tr>
-        <td class="name">Tournevis</td>
-        <td class="price">1.40 €</td>
-        <td class="qty">340 en stock</td>
-      </tr>
-      <tr>
-        <td class="name">Tournevis</td>
-        <td class="price">1.40 €</td>
-        <td class="qty">340 en stock</td>
+      <tr *ngFor="let a of articleService.articles$ | async">
+        <td class="name">{{ a.name }}</td>
+        <td class="price">{{ a.price }} €</td>
+        <td class="qty">{{ a.qty }} en stock</td>
       </tr>
     </tbody>
   </table>
