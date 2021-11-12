@@ -1,7 +1,7 @@
 <main>
   <h1>Liste des articles</h1>
   <nav>
-    <button arial-label="Raffraichir">
+    <button arial-label="Raffraichir" (click)="refresh()">
       <fa-icon [icon]="faSync"></fa-icon>
     </button>
     <button arial-label="Ajouter" routerLink="add">
@@ -12,7 +12,8 @@
     </button>
   </nav>
 
-  <table>
+  <ng-template #loading>Loading...</ng-template>
+  <table *ngIf="articleService.articles$ | async; else loading">
     <tbody>
       <tr
         [class.selected]="selectedArticles.has(a)"

@@ -16,6 +16,7 @@ table tbody {
     display: flex;
     flex-flow: column;
     position: relative;
+    width: 19em;
 
     &:hover {
       background-color: var(--btn-hover-bg-color);

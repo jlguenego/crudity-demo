@@ -23,7 +23,9 @@ export class StockComponent implements OnInit {
 
   constructor(public articleService: ArticleService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.refresh();
+  }
 
   toggle(a: Article) {
     if (this.selectedArticles.has(a)) {
@@ -31,5 +33,9 @@ export class StockComponent implements OnInit {
       return;
     }
     this.selectedArticles.add(a);
+  }
+
+  refresh(): void {
+    this.articleService.refresh().subscribe();
   }
 }
