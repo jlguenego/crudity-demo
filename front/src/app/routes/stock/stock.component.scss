@@ -11,13 +11,13 @@ table tbody {
 
   tr {
     cursor: pointer;
-    border: 0.1em solid #bbb;
-    border-radius: 0.3em;
+    border: var(--border) #bbb;
+    border-radius: var(--border-radius);
     display: flex;
     flex-flow: column;
 
     td {
-      padding: 0.5em 1em;
+      padding: var(--padding);
 
       &.name {
         font-weight: bold;
