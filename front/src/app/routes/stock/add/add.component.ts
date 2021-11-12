@@ -1,15 +1,22 @@
 import { ArticleService } from 'src/app/services/article.service';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Article } from 'src/app/interfaces/article';
 import { ActivatedRoute, Router } from '@angular/router';
+import { faPlus, faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AddComponent implements OnInit {
+  faPlus = faPlus;
+  faSpinner = faSpinner;
+
+  isLoading = false;
+
   f = new FormGroup({
     name: new FormControl('Tournevis', [Validators.required]),
     price: new FormControl(1.2, [Validators.required]),
@@ -25,11 +32,14 @@ export class AddComponent implements OnInit {
   ngOnInit(): void {}
 
   submit() {
+    this.isLoading = true;
     this.articleService.add(this.f.value as Article).subscribe({
       next: () => {
+        this.isLoading = false;
         this.router.navigate(['..'], { relativeTo: this.route });
       },
       error: (err) => {
+        this.isLoading = false;
         console.log('err: ', err);
       },
     });

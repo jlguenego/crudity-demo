@@ -8,6 +8,8 @@ table tbody {
   display: flex;
   gap: 1em;
   flex-wrap: wrap;
+  align-content: flex-start;
+  max-width: 40em;
 
   tr {
     cursor: pointer;

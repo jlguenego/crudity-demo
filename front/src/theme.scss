@@ -20,6 +20,9 @@
   --btn-primary-active-bg-color: hsl(240, 100%, 85%);
   --btn-primary-fg-color: white;
   --btn-disabled-fg-color: gray;
+
+  --skeleton-start-color: #ccc;
+  --skeleton-end-color: #ddd;
 }
 
 body.dark {
@@ -38,4 +41,7 @@ body.dark {
   --btn-primary-active-bg-color: hsl(240, 100%, 60%);
   --btn-primary-fg-color: white;
   --btn-disabled-fg-color: gray;
+
+  --skeleton-start-color: #333;
+  --skeleton-end-color: #444;
 }

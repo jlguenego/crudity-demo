@@ -32,7 +32,7 @@ export class ArticleService {
         console.log('send undefined');
         this.articles$.next(undefined);
       }),
-      switchMap(() => timer(2000)),
+      switchMap(() => timer(0)),
       switchMap(() => this.http.get<Article[]>('/api/articles')),
       catchError((err) => {
         console.log('err: ', err);

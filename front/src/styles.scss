@@ -38,6 +38,9 @@ button {
   &:not(:disabled) {
     cursor: pointer;
     color: $btn-fg-color;
+    fa-icon * {
+      fill: $btn-fg-color;
+    }
     &:hover {
       border-color: $btn-hover-bg-color;
       background-color: $btn-hover-bg-color;
@@ -51,6 +54,9 @@ button {
       color: $btn-primary-fg-color;
       border-color: $btn-primary-bg-color;
       background-color: $btn-primary-bg-color;
+      fa-icon * {
+        fill: $btn-primary-fg-color;
+      }
       &:hover {
         border-color: $btn-primary-hover-bg-color;
         background-color: $btn-primary-hover-bg-color;
@@ -97,18 +103,18 @@ form {
 
 @keyframes loading {
   from {
-    background-color: #ccc;
-    color: #ccc;
+    background-color: var(--skeleton-start-color);
+    color: var(--skeleton-start-color);
   }
 
   50% {
-    background-color: #ddd;
-    color: #ddd;
+    background-color: var(--skeleton-end-color);
+    color: var(--skeleton-end-color);
   }
 
   to {
-    background-color: #ccc;
-    color: #ccc;
+    background-color: var(--skeleton-start-color);
+    color: var(--skeleton-start-color);
   }
 }
 
