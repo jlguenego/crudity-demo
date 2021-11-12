@@ -1,6 +1,7 @@
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, tap } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Article } from '../interfaces/article';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -13,5 +14,13 @@ export class ArticleService {
     { id: 'a4', name: 'Marteau', price: 10, qty: 45 },
   ]);
 
-  constructor() {}
+  constructor(private http: HttpClient) {
+    this.refresh().subscribe();
+  }
+
+  refresh() {
+    return this.http
+      .get<Article[]>('/api/articles')
+      .pipe(tap((articles) => this.articles$.next(articles)));
+  }
 }
