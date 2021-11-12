@@ -1,15 +1,13 @@
+import { ArticleService } from 'src/app/services/article.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-stock',
   templateUrl: './stock.component.html',
-  styleUrls: ['./stock.component.scss']
+  styleUrls: ['./stock.component.scss'],
 })
 export class StockComponent implements OnInit {
+  constructor(public articleService: ArticleService) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
