@@ -7,7 +7,11 @@
     <button arial-label="Ajouter" routerLink="add">
       <fa-icon [icon]="faPlus"></fa-icon>
     </button>
-    <button arial-label="Supprimer" [hidden]="selectedArticles.size === 0">
+    <button
+      arial-label="Supprimer"
+      [hidden]="selectedArticles.size === 0"
+      (click)="remove()"
+    >
       <fa-icon [icon]="faTrashAlt"></fa-icon>
     </button>
   </nav>

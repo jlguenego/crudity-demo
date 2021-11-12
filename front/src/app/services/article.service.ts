@@ -9,12 +9,21 @@ import {
 } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Article } from '../interfaces/article';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ArticleService {
+  remove(selectedArticles: Set<Article>) {
+    const ids = [...selectedArticles].map((a) => a.id);
+    return this.http.delete('/api/articles', {
+      body: JSON.stringify(ids),
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    });
+  }
   articles$ = new BehaviorSubject<Article[] | undefined>([]);
 
   constructor(private http: HttpClient) {

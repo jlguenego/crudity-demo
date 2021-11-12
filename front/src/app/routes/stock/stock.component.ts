@@ -38,4 +38,11 @@ export class StockComponent implements OnInit {
   refresh(): void {
     this.articleService.refresh().subscribe();
   }
+
+  remove() {
+    this.articleService.remove(this.selectedArticles).subscribe(() => {
+      this.selectedArticles.clear();
+      this.refresh();
+    });
+  }
 }
