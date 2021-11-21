@@ -5,7 +5,7 @@
       <button
         title="Filtre & Ordre"
         aria-label="Filtre & Ordre"
-        (click)="toggleSidebar()"
+        (click)="showSidebar = true"
       >
         <fa-icon [icon]="faBars"></fa-icon>
       </button>
@@ -58,3 +58,13 @@
     </table>
   </div>
 </main>
+
+<app-sidebar [hidden]="showSidebar">
+  <h1>Coucou</h1>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+    repellendus ut itaque? Asperiores nostrum commodi autem, quas atque saepe ea
+    ab ipsa odit! Consectetur repellendus praesentium optio error placeat
+    laborum?
+  </p>
+</app-sidebar>

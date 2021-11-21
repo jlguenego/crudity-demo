@@ -21,6 +21,8 @@ export class StockComponent implements OnInit {
   faPen = faPen;
   faBars = faBars;
 
+  showSidebar = false;
+
   selectedArticles = new Set<Article>();
 
   constructor(public articleService: ArticleService) {}
@@ -47,6 +49,4 @@ export class StockComponent implements OnInit {
       this.refresh();
     });
   }
-
-  toggleSidebar() {}
 }
