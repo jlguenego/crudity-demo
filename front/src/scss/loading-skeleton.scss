@@ -1,0 +1,21 @@
+.skeleton {
+  background-clip: content-box;
+  animation: loading 2s ease-in-out 0s infinite;
+}
+
+@keyframes loading {
+  from {
+    background-color: var(--skeleton-start-color);
+    color: var(--skeleton-start-color);
+  }
+
+  50% {
+    background-color: var(--skeleton-end-color);
+    color: var(--skeleton-end-color);
+  }
+
+  to {
+    background-color: var(--skeleton-start-color);
+    color: var(--skeleton-start-color);
+  }
+}

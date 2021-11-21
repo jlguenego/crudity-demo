@@ -1,56 +1,19 @@
-nav {
-  display: flex;
-  gap: 0.3em;
-  flex-wrap: wrap;
-  margin-bottom: 1em;
+.skeleton {
+  &.name {
+    width: 50%;
+  }
+  &.price {
+    width: 30%;
+  }
+  &.qty {
+    width: 70%;
+  }
 }
 
-table tbody {
-  display: flex;
-  gap: 1em;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  max-width: 40em;
-
-  tr {
-    cursor: pointer;
-    border: var(--border) #bbb;
-    border-radius: var(--border-radius);
+td {
+  &.name {
     display: flex;
-    flex-flow: column;
-    position: relative;
-    width: 19em;
-
-    &:hover {
-      background-color: var(--btn-hover-bg-color);
-      td.action {
-        display: block;
-        position: absolute;
-        top: -0.7em;
-        right: -1em;
-        button {
-          font-size: 0.5em;
-          border-color: black;
-        }
-      }
-    }
-
-    &.selected {
-      background-color: var(--btn-active-bg-color);
-    }
-
-    td {
-      padding: var(--padding);
-
-      &.name {
-        display: flex;
-        justify-content: space-between;
-        font-weight: bold;
-      }
-
-      &.action {
-        display: none;
-      }
-    }
+    justify-content: space-between;
+    font-weight: bold;
   }
 }

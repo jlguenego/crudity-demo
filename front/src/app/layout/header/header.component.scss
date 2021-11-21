@@ -1,8 +1,6 @@
-@import "src/variables.scss";
-
 :host {
-  background-color: $primary-bg-color;
-  color: $primary-fg-color;
+  background-color: var(--primary-bg-color);
+  color: var(--primary-fg-color);
   height: 3em;
   display: flex;
   align-items: center;

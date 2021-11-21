@@ -1,0 +1,15 @@
+@import "../node_modules/normalize.css/normalize.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  caret-color: var(--fg-color);
+  color: var(--fg-color);
+}
+
+body {
+  font-family: sans-serif;
+  color: var(--fg-color);
+  background-color: var(--bg-color);
+}

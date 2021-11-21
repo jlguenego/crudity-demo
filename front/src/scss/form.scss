@@ -1,0 +1,22 @@
+form {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  max-width: 25em;
+  gap: 0.5em;
+
+  input {
+    width: 100%;
+    padding: var(--padding);
+    border: var(--border) #ccc;
+    border-radius: var(--border-radius);
+    background-color: var(--bg-color);
+    &:focus {
+      outline: 0.05em solid var(--fg-color);
+    }
+  }
+
+  button {
+    margin-top: 3em;
+  }
+}

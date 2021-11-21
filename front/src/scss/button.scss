@@ -1,0 +1,43 @@
+button {
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  border: 0.1em solid var(--btn-bg-color);
+  background-color: var(--btn-bg-color);
+  color: var(--btn-disabled-fg-color);
+  &:not(:disabled) {
+    cursor: pointer;
+    color: var(--btn-fg-color);
+    fa-icon * {
+      fill: var(--btn-fg-color);
+    }
+    &:hover {
+      border-color: var(--btn-hover-bg-color);
+      background-color: var(--btn-hover-bg-color);
+    }
+    &:active {
+      border-color: var(--btn-active-bg-color);
+      background-color: var(--btn-active-bg-color);
+    }
+
+    &.primary {
+      color: var(--btn-primary-fg-color);
+      border-color: var(--btn-primary-bg-color);
+      background-color: var(--btn-primary-bg-color);
+      fa-icon * {
+        fill: var(--btn-primary-fg-color);
+      }
+      &:hover {
+        border-color: var(--btn-primary-hover-bg-color);
+        background-color: var(--btn-primary-hover-bg-color);
+      }
+      &:active {
+        border-color: var(--btn-primary-active-bg-color);
+        background-color: var(--btn-primary-active-bg-color);
+      }
+    }
+
+    &:focus {
+      outline: 0.05em solid var(--fg-color);
+    }
+  }
+}
