@@ -24,8 +24,8 @@
   --skeleton-start-color: #ccc;
   --skeleton-end-color: #ddd;
 
-  --sidebar-border-color: #eee;
-  --overlay-color: hsla(0, 0%, 50%, 0.5);
+  --sidebar-border-color: #888;
+  --overlay-color: hsla(0, 0%, 50%, 0.7);
 }
 
 body.dark {
@@ -49,5 +49,5 @@ body.dark {
   --skeleton-end-color: #444;
 
   --sidebar-border-color: #444;
-  --overlay-color: hsla(0, 0%, 50%, 0.5);
+  --overlay-color: hsla(0, 0%, 15%, 0.9);
 }

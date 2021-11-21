@@ -36,6 +36,19 @@ button {
       }
     }
 
+    &.transparent {
+      border-color: transparent;
+      background-color: transparent;
+      &:hover {
+        border-color: var(--btn-hover-bg-color);
+        background-color: var(--btn-hover-bg-color);
+      }
+      &:active {
+        border-color: var(--btn-active-bg-color);
+        background-color: var(--btn-active-bg-color);
+      }
+    }
+
     &:focus {
       outline: 0.05em solid var(--fg-color);
     }

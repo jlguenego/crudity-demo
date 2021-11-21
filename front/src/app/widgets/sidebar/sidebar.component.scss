@@ -5,8 +5,10 @@
   right: 0;
   left: 0;
   background-color: var(--overlay-color);
+  cursor: pointer;
 
   aside {
+    cursor: default;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -15,6 +17,19 @@
     width: 20em;
     background-color: var(--bg-color);
     padding: 0.5em;
-    border-right: 0.05em solid var(--sidebar-border-color);
+    border-right: 0.1em solid var(--sidebar-border-color);
+
+    &:hover {
+      button {
+        display: block;
+      }
+    }
+
+    button {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
 }

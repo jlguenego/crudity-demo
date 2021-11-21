@@ -1,5 +1,13 @@
 <div class="overlay" [hidden]="!show" (click)="hide()">
-  <aside>
+  <aside appStopPropagation>
+    <button
+      class="transparent"
+      aria-label="Fermer"
+      title="Fermer"
+      (click)="hide()"
+    >
+      <fa-icon [icon]="faTimes"></fa-icon>
+    </button>
     <ng-content></ng-content>
   </aside>
 </div>
