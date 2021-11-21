@@ -6,6 +6,7 @@ import {
   faPlus,
   faTrashAlt,
   faPen,
+  faBars,
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -18,6 +19,7 @@ export class StockComponent implements OnInit {
   faPlus = faPlus;
   faTrashAlt = faTrashAlt;
   faPen = faPen;
+  faBars = faBars;
 
   selectedArticles = new Set<Article>();
 
@@ -45,4 +47,6 @@ export class StockComponent implements OnInit {
       this.refresh();
     });
   }
+
+  toggleSidebar() {}
 }

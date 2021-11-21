@@ -2,13 +2,21 @@
   <h1>Liste des articles</h1>
   <div class="list">
     <nav>
-      <button arial-label="Raffraichir" (click)="refresh()">
+      <button
+        title="Filtre & Ordre"
+        aria-label="Filtre & Ordre"
+        (click)="toggleSidebar()"
+      >
+        <fa-icon [icon]="faBars"></fa-icon>
+      </button>
+      <button title="Raffraichir" aria-label="Raffraichir" (click)="refresh()">
         <fa-icon [icon]="faSync"></fa-icon>
       </button>
-      <button arial-label="Ajouter" routerLink="add">
+      <button title="Ajouter" arial-label="Ajouter" routerLink="add">
         <fa-icon [icon]="faPlus"></fa-icon>
       </button>
       <button
+        title="Supprimer"
         arial-label="Supprimer"
         [hidden]="selectedArticles.size === 0"
         (click)="remove()"
