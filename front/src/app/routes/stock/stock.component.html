@@ -1,50 +1,52 @@
 <main>
   <h1>Liste des articles</h1>
-  <nav>
-    <button arial-label="Raffraichir" (click)="refresh()">
-      <fa-icon [icon]="faSync"></fa-icon>
-    </button>
-    <button arial-label="Ajouter" routerLink="add">
-      <fa-icon [icon]="faPlus"></fa-icon>
-    </button>
-    <button
-      arial-label="Supprimer"
-      [hidden]="selectedArticles.size === 0"
-      (click)="remove()"
-    >
-      <fa-icon [icon]="faTrashAlt"></fa-icon>
-    </button>
-  </nav>
+  <div class="content">
+    <nav>
+      <button arial-label="Raffraichir" (click)="refresh()">
+        <fa-icon [icon]="faSync"></fa-icon>
+      </button>
+      <button arial-label="Ajouter" routerLink="add">
+        <fa-icon [icon]="faPlus"></fa-icon>
+      </button>
+      <button
+        arial-label="Supprimer"
+        [hidden]="selectedArticles.size === 0"
+        (click)="remove()"
+      >
+        <fa-icon [icon]="faTrashAlt"></fa-icon>
+      </button>
+    </nav>
 
-  <ng-template #loading>
-    <table>
+    <ng-template #loading>
+      <table>
+        <tbody>
+          <tr *ngFor="let a of [1, 2, 3, 4]">
+            <td class="name skeleton">loading...</td>
+            <td class="price skeleton">loading...</td>
+            <td class="qty skeleton">loading...</td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-template>
+    <table *ngIf="articleService.articles$ | async; else loading">
       <tbody>
-        <tr *ngFor="let a of [1, 2, 3, 4]">
-          <td class="name skeleton">loading...</td>
-          <td class="price skeleton">loading...</td>
-          <td class="qty skeleton">loading...</td>
+        <tr
+          [class.selected]="selectedArticles.has(a)"
+          (click)="toggle(a)"
+          *ngFor="let a of articleService.articles$ | async"
+        >
+          <td class="name">
+            {{ a.name }}
+          </td>
+          <td class="price">{{ a.price }} €</td>
+          <td class="qty">{{ a.qty }} en stock</td>
+          <td class="action">
+            <button arial-label="Editer" routerLink="edit">
+              <fa-icon [icon]="faPen"></fa-icon>
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>
-  </ng-template>
-  <table *ngIf="articleService.articles$ | async; else loading">
-    <tbody>
-      <tr
-        [class.selected]="selectedArticles.has(a)"
-        (click)="toggle(a)"
-        *ngFor="let a of articleService.articles$ | async"
-      >
-        <td class="name">
-          {{ a.name }}
-        </td>
-        <td class="price">{{ a.price }} €</td>
-        <td class="qty">{{ a.qty }} en stock</td>
-        <td class="action">
-          <button arial-label="Editer" routerLink="edit">
-            <fa-icon [icon]="faPen"></fa-icon>
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  </div>
 </main>
