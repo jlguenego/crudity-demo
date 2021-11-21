@@ -1,0 +1,20 @@
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: var(--overlay-color);
+
+  aside {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    max-width: 70vw;
+    width: 20em;
+    background-color: var(--bg-color);
+    padding: 0.5em;
+    border-right: 0.05em solid var(--sidebar-border-color);
+  }
+}
