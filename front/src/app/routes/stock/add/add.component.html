@@ -14,8 +14,8 @@
       <input type="number" formControlName="qty" />
     </label>
     <button class="primary" [disabled]="f.invalid">
-      <fa-icon [icon]="faPlus" *ngIf="!isLoading"></fa-icon>
-      <fa-icon [icon]="faSpinner" [spin]="true" *ngIf="isLoading"></fa-icon>
+      <fa-icon [icon]="faPlus" *ngIf="!isSubmitting"></fa-icon>
+      <fa-icon [icon]="faSpinner" [spin]="true" *ngIf="isSubmitting"></fa-icon>
       Ajouter
     </button>
   </form>

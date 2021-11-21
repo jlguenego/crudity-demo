@@ -15,7 +15,7 @@ export class AddComponent implements OnInit {
   faPlus = faPlus;
   faSpinner = faSpinner;
 
-  isLoading = false;
+  isSubmitting = false;
 
   f = new FormGroup({
     name: new FormControl('Tournevis', [Validators.required]),
@@ -32,14 +32,14 @@ export class AddComponent implements OnInit {
   ngOnInit(): void {}
 
   submit() {
-    this.isLoading = true;
+    this.isSubmitting = true;
     this.articleService.add(this.f.value as Article).subscribe({
       next: () => {
-        this.isLoading = false;
+        this.isSubmitting = false;
         this.router.navigate(['..'], { relativeTo: this.route });
       },
       error: (err) => {
-        this.isLoading = false;
+        this.isSubmitting = false;
         console.log('err: ', err);
       },
     });

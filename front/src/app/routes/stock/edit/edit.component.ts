@@ -1,8 +1,9 @@
-import { ArticleService } from './../../../services/article.service';
-import { ActivatedRoute, Params, Router } from '@angular/router';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { faPen, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { Article } from 'src/app/interfaces/article';
+import { ArticleService } from './../../../services/article.service';
 
 @Component({
   selector: 'app-edit',
@@ -10,12 +11,15 @@ import { Article } from 'src/app/interfaces/article';
   styleUrls: ['./edit.component.scss'],
 })
 export class EditComponent implements OnInit {
+  faPen = faPen;
+  faSpinner = faSpinner;
   f = new FormGroup({
     name: new FormControl('', [Validators.required]),
     price: new FormControl('', [Validators.required]),
     qty: new FormControl('', [Validators.required]),
   });
   isLoading = true;
+  isSubmitting = false;
   id = '';
 
   constructor(
@@ -40,11 +44,13 @@ export class EditComponent implements OnInit {
   ngOnInit(): void {}
 
   submit() {
+    this.isSubmitting = true;
     const article = this.f.value as Article;
     article.id = this.id;
     this.articleService.rewrite(article).subscribe({
       next: () => {
         this.router.navigate(['..'], { relativeTo: this.route });
+        this.isSubmitting = false;
       },
     });
   }

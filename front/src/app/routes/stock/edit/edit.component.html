@@ -13,6 +13,10 @@
       <div>Quantité</div>
       <input type="number" formControlName="qty" />
     </label>
-    <button class="primary">Modifier</button>
+    <button class="primary">
+      <fa-icon [icon]="faPen" *ngIf="!isSubmitting"></fa-icon>
+      <fa-icon [icon]="faSpinner" [spin]="true" *ngIf="isSubmitting"></fa-icon>
+      Modifier
+    </button>
   </form>
 </main>
