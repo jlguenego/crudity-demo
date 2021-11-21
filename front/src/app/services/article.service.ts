@@ -17,12 +17,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class ArticleService {
   articles$ = new BehaviorSubject<Article[] | undefined>([]);
 
-  constructor(private http: HttpClient) {
-    this.refresh().subscribe();
-  }
+  constructor(private http: HttpClient) {}
 
   add(article: Article): Observable<void> {
     return this.http.post<void>('/api/articles', article);
+  }
+
+  get(id: string) {
+    return this.http.get<Article>('/api/articles/' + id);
   }
 
   refresh() {
@@ -52,5 +54,9 @@ export class ArticleService {
         'Content-Type': 'application/json',
       }),
     });
+  }
+
+  rewrite(article: Article) {
+    return this.http.put(`/api/articles/${article.id}`, article);
   }
 }

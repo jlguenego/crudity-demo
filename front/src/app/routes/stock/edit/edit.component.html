@@ -1,1 +1,18 @@
-<p>edit works!</p>
+<main>
+  <h1>Edition d'un article</h1>
+  <form [formGroup]="f" (ngSubmit)="submit()" *ngIf="!isLoading">
+    <label>
+      <div>Nom</div>
+      <input type="text" formControlName="name" appAutofocus />
+    </label>
+    <label>
+      <div>Prix</div>
+      <input type="number" formControlName="price" />
+    </label>
+    <label>
+      <div>Quantité</div>
+      <input type="number" formControlName="qty" />
+    </label>
+    <button class="primary">Modifier</button>
+  </form>
+</main>

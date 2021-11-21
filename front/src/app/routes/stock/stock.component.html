@@ -49,7 +49,11 @@
           <td class="price">{{ a.price }} €</td>
           <td class="qty">{{ a.qty }} en stock</td>
           <td class="action">
-            <button arial-label="Editer" routerLink="edit">
+            <button
+              arial-label="Editer"
+              routerLink="edit"
+              [queryParams]="{ id: a.id }"
+            >
               <fa-icon [icon]="faPen"></fa-icon>
             </button>
           </td>
